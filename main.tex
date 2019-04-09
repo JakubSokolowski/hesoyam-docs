@@ -168,11 +168,18 @@ Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzyst
 \subsection{Model danych}
 \subsection{Moduły}
 \subsubsection{Serwer}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.95\textwidth]{img/serwer-modules.png}
+  \caption{Diagram modułów serwera}
+  \label{fig:server}
+\end{figure}
 \paragraph*{DataAccess}
 \paragraph*{IdentityManager}
 \paragraph*{DocumentObjectMapper}
 \paragraph*{SentimentDataEndpoint}
 \paragraph*{DataScrapperEndpoint}
+
 \newpage
 \subsubsection{Klient}
 \begin{figure}[h!]
@@ -190,7 +197,7 @@ Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzyst
 \paragraph*{Serwis tożsamości użytkownika}
 
 \subsection{Technologie}
-\subsubsection{Stack technologiczny} 
+\subsubsection{Stack technologiczny}
 \begin{itemize}
   \item {\textbf{aplikacja klienta}: Angular7}
   \item {\textbf{komunikacja klient-serwer}: WebSockets}
