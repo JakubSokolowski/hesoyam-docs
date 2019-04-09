@@ -141,22 +141,21 @@ Przez sentyment rozumiemy: opinie na temat sytuacji na rynku (uzyskiwane za pomo
 W finansach behawioralnych, ważnym wskaźnikiem pozwalającym na opisanie zachowanie inwestorów lub osób zainteresowanych rynkiem jest sentyment. Sentyment możemy ogólnie zdefiniować jako skłonność do spekulacji (podejmowania nadmiernego ryzyka) oraz system oczekiwań, co do przyszłego kursu danego instrumentu finansowego. W pracy \textit{"Investor Sentiment in the Stock Market"} Baker i Wurgler rozważają teoretyczne wpływy sentymentu na rynki oraz instrumenty finansowe. Zgodnie z obserwacjami autorów badania, instrumenty finansowe cechujące się zwiększoną zmiennością cen oraz skomplikowaną wyceną, charakteryzują się większą podatnością na sentyment.
 \section{Wymagania i założenia projektu}
 \subsection{Wymagania funkcjonalne}
-\textbf{TO SAMO TYLKO DŁUŻEJ. MOŻE JAKIEŚ PRZYPADKI UŻYCIA DODAĆ}
 \begin{enumerate}
-  \item {Wizualizacja przebiegu czasowego ceny instrumentu, za pomocą wykresów "candlestick".}
-  \item {Wyświetlanie danych sentymentu z zadanego przedziały czasowego filtrowanie i agregacja danych.}
-  \item {Umożliwienie użytkownikowi uzupełnienia luk w danych, z wykorzystaniem komputera użytkownika.}
-  \item {Umożliwienie pobrania danych w różnych formatach.}
+  \item {Wizualizacja przebiegu czasowego ceny instrumentu, za pomocą wykresów "candlestick". Zdecydowaliśmy się wybrać wykresy typu świecowego, ponieważ uwzględniają one zmiany ceny w okresie. Każda ze świec pokazuje cenę maksymalną, minimalną, jak również cenę otwarcia oraz zamknięcia. Wypełnienie świec kolorem zagwarantuje poprawę czytelności oraz ułatwi dostrzeganie zmian.}
+  \item {Wyświetlanie danych sentymentu z zadanego przedziału czasowego, filtrowanie i agregacja danych. Pozwoli to użytkownikowi na komfort przeglądania interesujących danych oraz możliwość dogłębnej analizy jedynie interesującego przedziału czasu.}
+  \item {Umożliwienie użytkownikowi uzupełnienia luk w danych - z wykorzystaniem komputera użytkownika. Wprowadzenie funkcjonalności pozwoli na "samodoskonalenie" się systemu oraz sprawi, że narzędzie stanie się bardziej kompleksowe.}
+  \item {Umożliwienie pobrania danych w różnych formatach. Wprowadzenie funkcjonalności pozwoli użytkownikowi na pobranie danych w potrzebnym formacie. Przewiduje się umożliwienie pobrania danych w takich formatach jak: JSON oraz CSV - z możliwością wyboru separatora.}
 \end{enumerate}
+  \clearpage
 \subsection{Wymagania niefunkcjonalne}
 \begin{enumerate}
   \item {System przewiduje maksymalną ilość użytkowników równocześnie korzystających z systemu na poziomie 100 osób.}
   \item {System okresowo (godziny nocne, z uwagi na mniejsze obciążenie serwera) generuje kopie zapasowe.}
   \item {System przewiduje współpracę jedynie z nowoczesnymi przeglądarkami internetowymi.}
 \end{enumerate}
-\clearpage
 \subsection{Założenia}
-Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzystane do analizy sentymentu pochodzą głównie z portali takich jak: Reddit oraz Twitter, a wybranymi instrumentami finansowymi są kryptowaluty - ..WYMIENIĆ JAKIE. Zgromadzone dane zostały otagowane przy wykorzystaniu przetwarzania języka naturalnego (z ang. \textit{Natural Language Processing}, NLP) 
+Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzystane do analizy sentymentu pochodzą głównie z portali takich jak: Reddit oraz Twitter, a wybranymi instrumentami finansowymi są kryptowaluty - Bitcoin, Ethereum, Litecoin etc. Zgromadzone dane zostały otagowane przy wykorzystaniu przetwarzania języka naturalnego (z ang. \textit{Natural Language Processing}, NLP) w Pythonie, w bibliotece VADER - część \textit{Natural Language Toolkit}. Analizator każdemu wyrażeniu przypisuje wartość z przedziału $[0; 1]$, w zależności od stopnia wydźwięku podanej frazy (pozytywna, negatywna lub neutralna).
 \section{Architektura projektu}
 \subsection{Model danych}
 \subsection{Moduły}
@@ -165,14 +164,15 @@ Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzyst
 \begin{itemize}
   \item {\textbf{aplikacja klienta}: Angular7}
   \item {\textbf{komunikacja klient-serwer}: REST API, WebSockets}
-  \item {\textbf{serwer}: javaEE}
-  \item {\textbf{baza danych}: mongoDB}
+  \item {\textbf{serwer}: JavaEE}
+  \item {\textbf{baza danych}: MongoDB}
 \end{itemize}
+\clearpage
 \subsubsection{Wybrane technologie}
 \begin{itemize}
     \item {\textbf{MongoDB} - jest nierelacyjnym systemem zarządzania bazą danych, który charakteryzuje się wysokiego stopnia skalowalnością oraz brakiem jednolitej struktury obsługiwania baz danych. MongoDB składuje dokumenty w postaci plików JSON, które zwyczajowo nazywane są dokumentami i umieszczane są w tzw. kolekcjach. Silnik nie wymaga tworzenie schematu bazy danych - schemat działania opiera się na wstawianiu dokumentów w odpowiednie kolekcje. W przypadku, gdy dana kolekcja nie istnieje, zostaje ona automatycznie stworzona. W porównaniu z relacyjnymi bazami danych, MongoDB charakteryzuje się większą wydajnością oraz możliwością skalowania bazy na wiele serwerów.}
     \item {\textbf{Angular7} - }
-    \item {\textbf{REST API, WebSockets} - }
+    \item {\textbf{WebSockets} - }
 \end{itemize}
 
 \begin{thebibliography}{9}
