@@ -138,7 +138,7 @@ Dr inż. Tomasz Walkowiak
 Celem projektu jest stworzenie aplikacji webowej umożliwiającej analizę sentymentu na rynkach finansowych.
 Przez sentyment rozumiemy: opinie na temat sytuacji na rynku (uzyskiwane za pomocą analizy postów, artykułów oraz komentarzy).
 \subsection{Sentyment na rynkach finansowych}
-W finansach behawioralnych, ważnym wskaźnikiem pozwalającym na opisanie zachowanie inwestorów lub osób zainteresowanych rynkiem jest sentyment. Sentyment możemy ogólnie zdefiniować jako skłonność do spekulacji (podejmowania nadmiernego ryzyka) oraz system oczekiwań, co do przyszłego kursu danego instrumentu finansowego. W pracy \textit{"Investor Sentiment in the Stock Market"} Baker i Wurgler rozważają teoretyczne wpływy sentymentu na rynki oraz instrumenty finansowe. Zgodnie z obserwacjami autorów badania, instrumenty finansowe cechujące się zwiększoną zmiennością cen oraz skomplikowaną wyceną, charakteryzują się większą podatnością na sentyment. \textbf{TUTAJ OPISZEMY W JAKI SPOSÓB ANALIZOWANE SĄ POSTY}. 
+W finansach behawioralnych, ważnym wskaźnikiem pozwalającym na opisanie zachowanie inwestorów lub osób zainteresowanych rynkiem jest sentyment. Sentyment możemy ogólnie zdefiniować jako skłonność do spekulacji (podejmowania nadmiernego ryzyka) oraz system oczekiwań, co do przyszłego kursu danego instrumentu finansowego. W pracy \textit{"Investor Sentiment in the Stock Market"} Baker i Wurgler rozważają teoretyczne wpływy sentymentu na rynki oraz instrumenty finansowe. Zgodnie z obserwacjami autorów badania, instrumenty finansowe cechujące się zwiększoną zmiennością cen oraz skomplikowaną wyceną, charakteryzują się większą podatnością na sentyment.
 \section{Wymagania i założenia projektu}
 \subsection{Wymagania funkcjonalne}
 \textbf{TO SAMO TYLKO DŁUŻEJ. MOŻE JAKIEŚ PRZYPADKI UŻYCIA DODAĆ}
@@ -156,7 +156,7 @@ W finansach behawioralnych, ważnym wskaźnikiem pozwalającym na opisanie zacho
 \end{enumerate}
 \clearpage
 \subsection{Założenia}
-\textbf{DANE FINANSOWE SĄ DROGIE WIĘC BIERZEMY DANE Z CRYPTO. DANE ZBIERAMY Z TWITTERA I REDDITA}
+Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzystane do analizy sentymentu pochodzą głównie z portali takich jak: Reddit oraz Twitter, a wybranymi instrumentami finansowymi są kryptowaluty - ..WYMIENIĆ JAKIE. Zgromadzone dane zostały otagowane przy wykorzystaniu przetwarzania języka naturalnego (z ang. \textit{Natural Language Processing}, NLP) 
 \section{Architektura projektu}
 \subsection{Model danych}
 \subsection{Moduły}
@@ -173,7 +173,7 @@ W finansach behawioralnych, ważnym wskaźnikiem pozwalającym na opisanie zacho
     \item {\textbf{MongoDB} - jest nierelacyjnym systemem zarządzania bazą danych, który charakteryzuje się wysokiego stopnia skalowalnością oraz brakiem jednolitej struktury obsługiwania baz danych. MongoDB składuje dokumenty w postaci plików JSON, które zwyczajowo nazywane są dokumentami i umieszczane są w tzw. kolekcjach. Silnik nie wymaga tworzenie schematu bazy danych - schemat działania opiera się na wstawianiu dokumentów w odpowiednie kolekcje. W przypadku, gdy dana kolekcja nie istnieje, zostaje ona automatycznie stworzona. W porównaniu z relacyjnymi bazami danych, MongoDB charakteryzuje się większą wydajnością oraz możliwością skalowania bazy na wiele serwerów.}
     \item {\textbf{Angular7} - }
     \item {\textbf{REST API, WebSockets} - }
-\end{itemize} Journal of Economic Perspectives, 21 (2): 129-152.
+\end{itemize}
 
 \begin{thebibliography}{9}
 \bibitem{sentiment} 
