@@ -164,6 +164,7 @@ Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzyst
   \caption{Diagram architektury}
   \label{fig:arch}
 \end{figure}
+\newpage
 \subsection{Model danych}
 \subsection{Moduły}
 \subsubsection{Serwer}
@@ -172,11 +173,19 @@ Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzyst
 \paragraph*{DocumentObjectMapper}
 \paragraph*{SentimentDataEndpoint}
 \paragraph*{DataScrapperEndpoint}
+\newpage
 \subsubsection{Klient}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.95\textwidth]{img/client-modules.png}
+  \caption{Diagram modułów klienta}
+  \label{fig:client}
+\end{figure}
 
-\paragraph*{LoginView}
-\paragraph*{DataSentimentView}
-\paragraph*{DataScrapperView}
+\paragraph*{Widok analizy sentymentu}
+\paragraph*{Widok logowania}
+\paragraph*{Widok zbierania danych}
+\paragraph{}
 
 \subsection{Technologie}
 \subsubsection{Stack technologiczny}
