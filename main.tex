@@ -155,24 +155,43 @@ W finansach behawioralnych, ważnym wskaźnikiem pozwalającym na opisanie zacho
   \item {System przewiduje współpracę jedynie z nowoczesnymi przeglądarkami internetowymi.}
 \end{enumerate}
 \subsection{Założenia}
-Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzystane do analizy sentymentu pochodzą głównie z portali takich jak: Reddit oraz Twitter, a wybranymi instrumentami finansowymi są kryptowaluty - Bitcoin, Ethereum, Litecoin etc. Zgromadzone dane zostały otagowane przy wykorzystaniu przetwarzania języka naturalnego (z ang. \textit{Natural Language Processing}, NLP) w Pythonie, w bibliotece VADER - część \textit{Natural Language Toolkit}. Analizator każdemu wyrażeniu przypisuje wartość z przedziału $[0; 1]$, w zależności od stopnia wydźwięku podanej frazy (pozytywna, negatywna lub neutralna).
+Z uwagi na brak zaplecza finansowego podczas realizacji projektu, dane wykorzystane do analizy sentymentu pochodzą głównie z portali takich jak: Reddit oraz Twitter, a wybranymi instrumentami finansowymi są kryptowaluty - Bitcoin, Ethereum, Litecoin etc. Zgromadzone dane zostały otagowane przy wykorzystaniu przetwarzania języka naturalnego (z ang. \textit{Natural Language Processing}, NLP) w Pythonie, w bibliotece VADER - część \textit{Natural Language Toolkit}. Analizator każdemu wyrażeniu przypisuje wartość z przedziału $[0; 1]$, w zależności od wydźwięku podanej frazy (pozytywna, negatywna lub neutralna).
+\newpage
 \section{Architektura projektu}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.95\textwidth]{img/architecture.png}
+  \caption{Diagram architektury}
+  \label{fig:arch}
+\end{figure}
 \subsection{Model danych}
 \subsection{Moduły}
+\subsubsection{Serwer}
+\paragraph*{DataAccess}
+\paragraph*{IdentityManager}
+\paragraph*{DocumentObjectMapper}
+\paragraph*{SentimentDataEndpoint}
+\paragraph*{DataScrapperEndpoint}
+\subsubsection{Klient}
+
+\paragraph*{LoginView}
+\paragraph*{DataSentimentView}
+\paragraph*{DataScrapperView}
+
 \subsection{Technologie}
 \subsubsection{Stack technologiczny}
 \begin{itemize}
   \item {\textbf{aplikacja klienta}: Angular7}
-  \item {\textbf{komunikacja klient-serwer}: REST API, WebSockets}
+  \item {\textbf{komunikacja klient-serwer}: WebSockets}
   \item {\textbf{serwer}: JavaEE}
   \item {\textbf{baza danych}: MongoDB}
 \end{itemize}
 \clearpage
 \subsubsection{Wybrane technologie}
 \begin{itemize}
-    \item {\textbf{MongoDB} - jest nierelacyjnym systemem zarządzania bazą danych, który charakteryzuje się wysokiego stopnia skalowalnością oraz brakiem jednolitej struktury obsługiwania baz danych. MongoDB składuje dokumenty w postaci plików JSON, które zwyczajowo nazywane są dokumentami i umieszczane są w tzw. kolekcjach. Silnik nie wymaga tworzenie schematu bazy danych - schemat działania opiera się na wstawianiu dokumentów w odpowiednie kolekcje. W przypadku, gdy dana kolekcja nie istnieje, zostaje ona automatycznie stworzona. W porównaniu z relacyjnymi bazami danych, MongoDB charakteryzuje się większą wydajnością oraz możliwością skalowania bazy na wiele serwerów.}
-    \item {\textbf{Angular7} - }
-    \item {\textbf{WebSockets} - }
+    \item {\textbf{MongoDB} - jest nierelacyjnym systemem zarządzania bazą danych, który charakteryzuje się wysokiego stopnia skalowalności100%ą oraz brakiem jednolitej struktury obsługiwania baz danych. MongoDB składuje dokumenty w postaci plików JSON, które zwyczajowo nazywane są dokumentami i umieszczane są w tzw. kolekcjach. Silnik nie wymaga tworzenie schematu bazy danych - schemat działania opiera się na wstawianiu dokumentów w odpowiednie kolekcje. W przypadku, gdy dana kolekcja nie istnieje, zostaje ona automatycznie stworzona. W porównaniu z relacyjnymi bazami danych, MongoDB charakteryzuje się większą wydajnością oraz możliwością skalowania bazy na wiele serwerów.}
+    \item {\textbf{Angular7} - z uwagi na dobrą integrację z TypeScriptem, który wprowadza typowanie do JS. TUTAJ MUSISZ POMÓC XD}
+    \item {\textbf{WebSockets} - jest technologią zapewniającą dwukierunkowy (full duplex) kanał komunikacji. Charakteryzuje się mniejszym kosztem wymiany danych niż REST oraz większą skalowalnością horyzontalną - ingerencja w daną strukturę poprzez dodawanie bądź usuwanie kolejnych serwerów. Decyzja o wyborze ww. technologii została podjęta na podstawie charakteru tworzonej aplikacji - wysyłanie dużych porcji danych do serwera oraz przeglądanie danych pochodzących z wybranego przedziału czasowego.}
 \end{itemize}
 
 \begin{thebibliography}{9}
